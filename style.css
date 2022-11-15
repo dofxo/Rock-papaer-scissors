@@ -1,3 +1,6 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
 /* general */
 :root {
     --game-table-bg: #379237;
@@ -14,6 +17,7 @@
 body {
     margin: 0;
     background: var(--game-table-bg);
+    font-family: 'Roboto Mono', monospace;
 }
 
 
