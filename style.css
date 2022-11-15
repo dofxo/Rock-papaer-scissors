@@ -1,0 +1,153 @@
+/* general */
+:root {
+    --game-table-bg: #379237;
+    --players-border: 5px solid #f54949;
+    --players-bg: #fce7004b;
+    --players-result: #F0FF42;
+    --btn-bg: #82CD47;
+    --btn-color: #F0FF42;
+    --box-shadow: 0 0 20px -5px #0c2116;
+    --restart-button-bg: #f54949;
+    --restart-button-color: #000;
+}
+
+body {
+    margin: 0;
+    background: var(--game-table-bg);
+}
+
+
+
+/* game table */
+#game-table {
+    background-color: var(--game-table-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60vw;
+    margin: 100px auto;
+    border-radius: 5px;
+
+}
+
+/* both computer and player */
+#players-container {
+    margin: 10px;
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+}
+
+.players {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px 0;
+
+}
+
+/* logo */
+.players-logo {
+    font-weight: bold;
+    width: 150px;
+    height: 150px;
+    border: var(--players-border);
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+    background-color: var(--players-bg);
+    transition: all linear 0.2s;
+    animation: borderColor 10s infinite linear;
+
+}
+
+
+.players-logo img {
+    width: 100%;
+
+}
+
+
+/* names */
+.players-name {
+    font-weight: bold;
+    color: var(--darkColor);
+}
+
+
+/* result */
+
+#result {
+    margin: 10px 0;
+    color: var(--players-result);
+    font-weight: bold;
+}
+
+/* start button */
+#start,
+#restart {
+    cursor: pointer;
+    background-color: var(--btn-bg);
+    color: var(--btn-color);
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 10px 50px;
+    transition: 0.1s;
+    margin: 10px 0;
+    box-shadow: var(--box-shadow);
+}
+
+#start:hover {
+    background: var(--game-table-bg);
+    color: var(--btn-bg);
+    transform: scale(1.05);
+}
+
+#restart {
+    background: var(--restart-button-bg);
+    color: var(--restart-button-color);
+}
+
+#restart:hover {
+    background: #801717;
+}
+
+
+#start:active,
+#restart:active {
+    transform: scale(0.95);
+}
+
+/* scores */
+#computer-score,
+#player-score {
+    color: #F0FF42;
+}
+
+/* border color animation */
+@keyframes borderColor {
+
+    0%,
+    100% {
+        border-color: var(--players-border);
+    }
+
+    50% {
+        border-color: #F0FF42;
+    }
+
+
+}
+
+/* media query */
+@media screen and (max-width:380px) {
+    .players-logo {
+        width: 100px;
+        height: 100px;
+        margin: 0 5px;
+    }
+}
