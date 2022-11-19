@@ -23,8 +23,8 @@ function rockPaperScrissors() {
         computer = gameTable[Math.floor(Math.random() * 3)]
 
     // changes the logo
-    playerEl.innerHTML = `<img src="images/${player}.png">`
-    computerEl.innerHTML = `<img src="images/${computer}.png">`
+    playerEl.innerHTML = `<img src="images/${player}.webp">`
+    computerEl.innerHTML = `<img src="images/${computer}.webp">`
 
 
     // paper > rock condition
