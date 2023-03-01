@@ -132,6 +132,33 @@ body {
     color: #F0FF42;
 }
 
+.choices {
+    display: flex;
+    gap: 10px;
+}
+
+.choices>button {
+    cursor: pointer;
+    font-weight: bold;
+    width: 170px;
+    height: 170px;
+    border: var(--players-border);
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+    background-color: var(--players-bg);
+    transition: all linear 0.2s;
+    animation: borderColor 10s infinite linear;
+}
+
+.choices>button:active {
+    transform: scale(0.8);
+}
+
 /* border color animation */
 @keyframes borderColor {
 

@@ -8,19 +8,23 @@ let playerScoreEl = document.getElementById('player-score')
 let resultEl = document.getElementById('result')
 
 
-let computerScore = 0,
-    playerScore = 0
 
+
+let computerScore = 0,
+    playerScore = 0,
+    player,
+    computer,
+    gameTable = []
 function rockPaperScrissors() {
 
 
-    const gameTable = [
-        "paper",
+    gameTable = [
+        'paper',
         'scissors',
         'rock'
     ]
-    const player = gameTable[Math.floor(Math.random() * 3)],
-        computer = gameTable[Math.floor(Math.random() * 3)]
+    computer = gameTable[Math.floor(Math.random() * 3)]
+    player = selectedChoice
 
     // changes the logo
     playerEl.innerHTML = `<img src="images/${player}.webp">`
@@ -75,7 +79,8 @@ function rockPaperScrissors() {
 
 }
 // starts the game on the CLICK
-startBtn.addEventListener('click', rockPaperScrissors)
+
+
 // restarts the scores 
 reStartBtn.addEventListener('click', () => {
     computerScore = 0
@@ -83,3 +88,17 @@ reStartBtn.addEventListener('click', () => {
     playerScoreEl.textContent = 0
     computerScoreEl.textContent = 0
 })
+
+
+// player choice
+let choices = document.querySelectorAll('.choice')
+
+choices.forEach(choice => {
+    choice.addEventListener('click', playerChoice)
+})
+
+let selectedChoice
+function playerChoice(event) {
+    selectedChoice = event.target.parentElement.getAttribute('choice')
+    rockPaperScrissors()
+}
